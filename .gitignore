@@ -1,0 +1,10 @@
+# environments and IDE
+.venv/
+.idea/
+__pycache__/
+.pytest_cache/
+.DS_Store
+
+# partial downloads and generated output
+snapshots/*.part
+kyiv_digital_alerts.csv

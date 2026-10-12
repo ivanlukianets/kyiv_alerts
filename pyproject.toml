@@ -1,0 +1,26 @@
+[project]
+name = "kyiv-alerts"
+version = "0.1.0"
+description = "Parse the Kyiv Digital air-alert history page into alert intervals for time-series work"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.2,<4",
+    "lxml>=5",
+    "requests>=2.31",
+    "tzdata>=2022.7",  # Europe/Kyiv needs a tz database; pandas only pulls tzdata on Windows
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+]
+
+[tool.uv]
+# A script project, not an installable package: kyiv_digital.py keeps its snapshots/
+# folder next to itself, which would break if it were installed into site-packages.
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
