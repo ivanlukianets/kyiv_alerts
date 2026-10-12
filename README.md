@@ -13,9 +13,11 @@ clone on any machine installs exactly the same versions.
 ```bash
 # 1. install uv once (macOS: brew install uv | Linux/macOS: curl -LsSf https://astral.sh/uv/install.sh | sh
 #    | Windows: powershell -c "irm https://astral.sh/uv/install.ps1 | iex")
-# 2. then, in the project folder:
+# 2. then:
+git clone https://github.com/ivanlukianets/kyiv_alerts.git
+cd kyiv_alerts
 uv sync                                         # creates .venv with the locked dependencies (and a suitable Python)
-uv run pytest                                   # 8 tests should pass
+uv run pytest                                   # 13 tests should pass
 uv run python kyiv_digital.py fetch             # saves snapshots/stats_<UTC time>.html next to the script
 uv run python kyiv_digital.py check             # self-consistency checks on the newest snapshot
 uv run python kyiv_digital.py parse --out kyiv_digital_alerts.csv
@@ -51,7 +53,28 @@ uv run python kyiv_digital.py parse --out kyiv_digital_alerts.csv
 | Same code with pandas 2.2.3 instead of the locked 3.0.6 | all tests pass; `parse` output is byte-identical (2,691 lines) |
 | Plain `pip install -r requirements.txt` in a fresh venv | works |
 | Machine with no system time-zone database | works because `tzdata` is a direct dependency. Without it, pandas only installs `tzdata` on Windows and the run fails with `No time zone found with key Europe/Kyiv` |
-| macOS and Windows | **not tested by the author.** The lock is universal (it resolves for all platforms and these packages publish wheels for them), so `uv sync --locked && uv run pytest` is the quick confirmation on a new machine |
+| Fresh `git clone` of this GitHub repo, then `uv sync --locked`, `pytest`, `check` | passes (Linux x86-64) |
+| macOS (Apple Silicon) | works, as reported by the repo owner after running `uv sync` |
+| Windows | **not tested.** The lock is universal (it resolves for all platforms and these packages publish wheels for them), so `uv sync --locked && uv run pytest` is the quick confirmation on a Windows machine |
+
+## Weather (extra, non-alert data)
+
+`weather.py` downloads daily Kyiv weather from [Open-Meteo](https://open-meteo.com/) (free for non-commercial use,
+CC BY 4.0: "Weather data by Open-Meteo.com"): temperature (max, min, mean, apparent), precipitation, snowfall, wind, gusts,
+weather code, sunrise, sunset, daylight and sunshine minutes, plus cloud cover, humidity, pressure and visibility when the API accepts them.
+
+```bash
+uv run python weather.py fetch                       # 2022-07-01 .. origin+6, origin = tomorrow (Kyiv)
+uv run python weather.py fetch --origin 2026-10-13   # fix the first forecast day
+uv run python weather.py check weather_kyiv_daily.csv
+```
+
+- Past days come from the Historical Forecast API (archived forecasts), today and the horizon from the live Forecast API; the `source` column says which.
+  Raw responses are kept in `weather_raw/` with the download time.
+- **Not a clean "known at the origin" feature.** The archive stitches the first hours of successive model runs, so the value for day D is about
+  a forecast issued on day D. For day 1 this is close to reality; for days 2 to 7 it is better than what we would have known, so weather gains at
+  longer horizons are optimistic. Model changes also make the archive slightly inconsistent.
+- The network call is tested only against a fake API (no internet in the dev sandbox); the first real run is the real test.
 
 ## Where the data comes from
 
@@ -104,8 +127,9 @@ as built from the same app data. We do not know how the app itself obtains the a
   of the previous all-clear are rare (0 to 3% per month in 2026). The longest alerts last 764, 673 and 632 minutes.
 
 ### Time, drift and leakage
-- **L14 The page is a mutable full history.** Past rows could be edited without notice. We have one real
-  snapshot, so we have never compared two. Keep all snapshots and diff them.
+- **L14 The page is a mutable full history.** Past rows could be edited without notice. The only two
+  snapshots compared so far (2026-10-12 10:54 and 11:02 UTC, 5,339 events each) are identical, but they are 8 minutes
+  apart with no new alert in between, so this says almost nothing about revisions. Keep all snapshots and diff them over days.
 - **L15 Publication time is not recorded.** Rows have event times, not the time the page was updated, and the lag
   between a siren and its row is unmeasured. A snapshot only proves an all-clear was known *by its fetch time*.
   Backtests that treat `finished_at` as known at `finished_at` are therefore optimistic. Use only alerts with

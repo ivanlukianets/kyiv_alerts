@@ -8,3 +8,5 @@ __pycache__/
 # partial downloads and generated output
 snapshots/*.part
 kyiv_digital_alerts.csv
+weather_raw/
+weather_kyiv_daily.csv
