@@ -9,11 +9,17 @@ dependencies = [
     "lxml>=5",
     "requests>=2.31",
     "tzdata>=2022.7",  # Europe/Kyiv needs a tz database; pandas only pulls tzdata on Windows
+    "statsmodels>=0.14",
+    "scikit-learn>=1.4",
 ]
 
 [dependency-groups]
 dev = [
     "pytest>=8",
+    "jupyterlab>=4",   # the analysis notebook
+    "ipykernel>=6",
+    "jupytext>=1.16",  # keeps analysis.ipynb paired with the plain-text analysis.py
+    "matplotlib>=3.8",
 ]
 
 [tool.uv]

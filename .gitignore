@@ -4,9 +4,10 @@
 __pycache__/
 .pytest_cache/
 .DS_Store
+.ipynb_checkpoints/
 
 # partial downloads and generated output
 snapshots/*.part
 kyiv_digital_alerts.csv
 weather_raw/
-weather_kyiv_daily.csv
+results/*.pkl
