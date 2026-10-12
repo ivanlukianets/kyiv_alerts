@@ -1,0 +1,112 @@
+date,country,name,kind,movable,rule
+2022-07-15,UA,Statehood Day,ua_statehood,False,07-15
+2022-07-31,RU,Navy Day,ru_state_military,True,last_sun_7
+2022-08-23,UA,Flag Day,ua_statehood,False,08-23
+2022-08-24,UA,Independence Day,ua_statehood,False,08-24
+2022-10-14,UA,Defenders Day (old date),ua_military,False,10-14
+2022-11-04,RU,National Unity Day,ru_state_military,False,11-04
+2022-11-21,UA,Dignity and Freedom Day,ua_military,False,11-21
+2022-12-06,UA,Armed Forces Day,ua_military,False,12-06
+2022-12-12,RU,Constitution Day (Russia),ru_state_military,False,12-12
+2022-12-31,both,New Year's Eve,new_year,False,12-31
+2023-01-01,both,New Year's Day,new_year,False,01-01
+2023-01-07,RU,Christmas (7 Jan),religious,False,01-07
+2023-01-07,UA,"Christmas (7 Jan, last time official)",religious,False,01-07
+2023-01-22,UA,Unity Day,ua_statehood,False,01-22
+2023-02-23,RU,Defender of the Fatherland Day,ru_state_military,False,02-23
+2023-02-24,both,Anniversary of the full-scale invasion,war_anniversary,False,02-24
+2023-03-08,both,International Women's Day,civil,False,03-08
+2023-04-16,both,Orthodox Easter,religious,True,easter+0
+2023-05-01,both,Labour Day,civil,False,05-01
+2023-05-08,UA,Day of Remembrance and Victory over Nazism,ua_military,False,05-08
+2023-05-09,RU,Victory Day,ru_state_military,False,05-09
+2023-05-28,UA,Kyiv Day,civil,True,last_sun_5
+2023-06-04,both,Trinity (Pentecost),religious,True,easter+49
+2023-06-12,RU,Russia Day,ru_state_military,False,06-12
+2023-06-28,UA,Constitution Day,ua_statehood,False,06-28
+2023-07-15,UA,Statehood Day,ua_statehood,False,07-15
+2023-07-30,RU,Navy Day,ru_state_military,True,last_sun_7
+2023-08-23,UA,Flag Day,ua_statehood,False,08-23
+2023-08-24,UA,Independence Day,ua_statehood,False,08-24
+2023-10-01,UA,Defenders Day,ua_military,False,10-01
+2023-11-04,RU,National Unity Day,ru_state_military,False,11-04
+2023-11-21,UA,Dignity and Freedom Day,ua_military,False,11-21
+2023-12-06,UA,Armed Forces Day,ua_military,False,12-06
+2023-12-12,RU,Constitution Day (Russia),ru_state_military,False,12-12
+2023-12-25,UA,Christmas (25 Dec),religious,False,12-25
+2023-12-31,both,New Year's Eve,new_year,False,12-31
+2024-01-01,both,New Year's Day,new_year,False,01-01
+2024-01-07,RU,Christmas (7 Jan),religious,False,01-07
+2024-01-22,UA,Unity Day,ua_statehood,False,01-22
+2024-02-23,RU,Defender of the Fatherland Day,ru_state_military,False,02-23
+2024-02-24,both,Anniversary of the full-scale invasion,war_anniversary,False,02-24
+2024-03-08,both,International Women's Day,civil,False,03-08
+2024-05-01,both,Labour Day,civil,False,05-01
+2024-05-05,both,Orthodox Easter,religious,True,easter+0
+2024-05-08,UA,Day of Remembrance and Victory over Nazism,ua_military,False,05-08
+2024-05-09,RU,Victory Day,ru_state_military,False,05-09
+2024-05-26,UA,Kyiv Day,civil,True,last_sun_5
+2024-06-12,RU,Russia Day,ru_state_military,False,06-12
+2024-06-23,both,Trinity (Pentecost),religious,True,easter+49
+2024-06-28,UA,Constitution Day,ua_statehood,False,06-28
+2024-07-15,UA,Statehood Day,ua_statehood,False,07-15
+2024-07-28,RU,Navy Day,ru_state_military,True,last_sun_7
+2024-08-23,UA,Flag Day,ua_statehood,False,08-23
+2024-08-24,UA,Independence Day,ua_statehood,False,08-24
+2024-10-01,UA,Defenders Day,ua_military,False,10-01
+2024-11-04,RU,National Unity Day,ru_state_military,False,11-04
+2024-11-21,UA,Dignity and Freedom Day,ua_military,False,11-21
+2024-12-06,UA,Armed Forces Day,ua_military,False,12-06
+2024-12-12,RU,Constitution Day (Russia),ru_state_military,False,12-12
+2024-12-25,UA,Christmas (25 Dec),religious,False,12-25
+2024-12-31,both,New Year's Eve,new_year,False,12-31
+2025-01-01,both,New Year's Day,new_year,False,01-01
+2025-01-07,RU,Christmas (7 Jan),religious,False,01-07
+2025-01-22,UA,Unity Day,ua_statehood,False,01-22
+2025-02-23,RU,Defender of the Fatherland Day,ru_state_military,False,02-23
+2025-02-24,both,Anniversary of the full-scale invasion,war_anniversary,False,02-24
+2025-03-08,both,International Women's Day,civil,False,03-08
+2025-04-20,both,Orthodox Easter,religious,True,easter+0
+2025-05-01,both,Labour Day,civil,False,05-01
+2025-05-08,UA,Day of Remembrance and Victory over Nazism,ua_military,False,05-08
+2025-05-09,RU,Victory Day,ru_state_military,False,05-09
+2025-05-25,UA,Kyiv Day,civil,True,last_sun_5
+2025-06-08,both,Trinity (Pentecost),religious,True,easter+49
+2025-06-12,RU,Russia Day,ru_state_military,False,06-12
+2025-06-28,UA,Constitution Day,ua_statehood,False,06-28
+2025-07-15,UA,Statehood Day,ua_statehood,False,07-15
+2025-07-27,RU,Navy Day,ru_state_military,True,last_sun_7
+2025-08-23,UA,Flag Day,ua_statehood,False,08-23
+2025-08-24,UA,Independence Day,ua_statehood,False,08-24
+2025-10-01,UA,Defenders Day,ua_military,False,10-01
+2025-11-04,RU,National Unity Day,ru_state_military,False,11-04
+2025-11-21,UA,Dignity and Freedom Day,ua_military,False,11-21
+2025-12-06,UA,Armed Forces Day,ua_military,False,12-06
+2025-12-12,RU,Constitution Day (Russia),ru_state_military,False,12-12
+2025-12-25,UA,Christmas (25 Dec),religious,False,12-25
+2025-12-31,both,New Year's Eve,new_year,False,12-31
+2026-01-01,both,New Year's Day,new_year,False,01-01
+2026-01-07,RU,Christmas (7 Jan),religious,False,01-07
+2026-01-22,UA,Unity Day,ua_statehood,False,01-22
+2026-02-23,RU,Defender of the Fatherland Day,ru_state_military,False,02-23
+2026-02-24,both,Anniversary of the full-scale invasion,war_anniversary,False,02-24
+2026-03-08,both,International Women's Day,civil,False,03-08
+2026-04-12,both,Orthodox Easter,religious,True,easter+0
+2026-05-01,both,Labour Day,civil,False,05-01
+2026-05-08,UA,Day of Remembrance and Victory over Nazism,ua_military,False,05-08
+2026-05-09,RU,Victory Day,ru_state_military,False,05-09
+2026-05-31,UA,Kyiv Day,civil,True,last_sun_5
+2026-05-31,both,Trinity (Pentecost),religious,True,easter+49
+2026-06-12,RU,Russia Day,ru_state_military,False,06-12
+2026-06-28,UA,Constitution Day,ua_statehood,False,06-28
+2026-07-15,UA,Statehood Day,ua_statehood,False,07-15
+2026-07-26,RU,Navy Day,ru_state_military,True,last_sun_7
+2026-08-23,UA,Flag Day,ua_statehood,False,08-23
+2026-08-24,UA,Independence Day,ua_statehood,False,08-24
+2026-10-01,UA,Defenders Day,ua_military,False,10-01
+2026-11-04,RU,National Unity Day,ru_state_military,False,11-04
+2026-11-21,UA,Dignity and Freedom Day,ua_military,False,11-21
+2026-12-06,UA,Armed Forces Day,ua_military,False,12-06
+2026-12-12,RU,Constitution Day (Russia),ru_state_military,False,12-12
+2026-12-25,UA,Christmas (25 Dec),religious,False,12-25
+2026-12-31,both,New Year's Eve,new_year,False,12-31

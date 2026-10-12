@@ -17,7 +17,7 @@ clone on any machine installs exactly the same versions.
 git clone https://github.com/ivanlukianets/kyiv_alerts.git
 cd kyiv_alerts
 uv sync                                         # creates .venv with the locked dependencies (and a suitable Python)
-uv run pytest                                   # 13 tests should pass
+uv run pytest                                   # 18 tests should pass
 uv run python kyiv_digital.py fetch             # saves snapshots/stats_<UTC time>.html next to the script
 uv run python kyiv_digital.py check             # self-consistency checks on the newest snapshot
 uv run python kyiv_digital.py parse --out kyiv_digital_alerts.csv
@@ -75,6 +75,20 @@ uv run python weather.py check weather_kyiv_daily.csv
   a forecast issued on day D. For day 1 this is close to reality; for days 2 to 7 it is better than what we would have known, so weather gains at
   longer horizons are optimistic. Model changes also make the archive slightly inconsistent.
 - The network call is tested only against a fake API (no internet in the dev sandbox); the first real run is the real test.
+
+## Holiday calendar (extra, non-alert data)
+
+`holiday_calendar.py` builds a hand-written calendar of Ukrainian, Russian and shared dates from rules (no network):
+`holiday_events.csv` (date, country, name, kind, movable, rule) and `holiday_features_daily.csv` (per day and group:
+`_is_day`, `_eve`, `_within2`, `_days_to_next`, `_days_since_last`, capped at 14). Groups: `ua_statehood`, `ua_military`,
+`ru_state_military`, `religious`, `new_year`, `war_anniversary`.
+
+```bash
+uv run python holiday_calendar.py build                       # 2022-07-01 .. 2026-12-31
+```
+
+- It is a hand-written table, **not an official source**: check it. Whether a date is a day off is not recorded (martial law changed Ukrainian days off; not verified).
+- Each date occurs only about four times in our data, so features are pooled into groups; the sign of any effect is unknown (symbolic strikes or truces).
 
 ## Where the data comes from
 
